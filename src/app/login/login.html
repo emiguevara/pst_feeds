@@ -1,0 +1,25 @@
+<form (submit)="login($event, username.value, password.value)">
+  <div class="mdl-grid">
+      <div class="mod-align-center">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" #username id="username">
+              <label class="mdl-textfield__label" for="username">Username</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" #password id="password">
+            <label class="mdl-textfield__label" for="password">Password</label>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+          <div class="mdl-cell--middle">
+            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+</form>
