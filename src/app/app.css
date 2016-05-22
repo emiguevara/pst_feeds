@@ -6,3 +6,23 @@ html, body{
 span.active {
   background-color: gray;
 }
+
+footer .mdl-logo a {
+    color: white;
+}
+footer .mdl-logo a:hover {
+    text-decoration: none;
+}
+
+div {
+  /*border: 1px solid red !important;*/
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}

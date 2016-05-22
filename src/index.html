@@ -32,6 +32,23 @@
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
 
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue-green.min.css">
+  <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!--<% if (webpackConfig.metadata.ENV === 'development') { %>-->
+  <!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.blue-green.min.css">-->
+  <!--<script src="https://code.getmdl.io/1.1.1/material.min.js"></script>-->
+  <!--<% } %>-->
+  <!--<% if (webpackConfig.metadata.ENV === 'production') { %>-->
+  <!--<link rel="stylesheet" href="/assets/material.blue-green.min.css">-->
+  <!--<script src="/assets/material.min.js"></script>-->
+  <!--<% } %>-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link href="{%=htmlWebpackPlugin.files.css[css] + '?v=' + new Date().toLocaleDateString() %}" rel="stylesheet">
+  <% } %>
 
 </head>
 
@@ -42,6 +59,7 @@
   </app>
 
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
+  <!--
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -51,6 +69,7 @@
     ga('create', 'UA-71073175-1', 'auto');
     ga('send', 'pageview');
   </script>
+  -->
 
   <% if (webpackConfig.metadata.ENV === 'development') { %>
   <!-- Webpack Dev Server reload -->
