@@ -1,49 +1,140 @@
-<div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-  <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
-
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Opoint - PST: RSS feed download</span>
-      <div class="mdl-layout-spacer"></div>
-      <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield&#45;&#45;expandable">-->
-        <!--<label class="mdl-button mdl-js-button mdl-button&#45;&#45;icon" for="search">-->
-          <!--<i class="material-icons">search</i>-->
-        <!--</label>-->
-        <!--<div class="mdl-textfield__expandable-holder">-->
-          <!--<input class="mdl-textfield__input" type="text" id="search">-->
-          <!--<label class="mdl-textfield__label" for="search">Enter your query...</label>-->
-        <!--</div>-->
-      <!--</div>-->
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="logout()">Logout</button>
-    </div>
+  <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+    <!--<div class="mdl-layout&#45;&#45;large-screen-only mdl-layout__header-row"></div>-->
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row"><h3>Opoint ZipFeed</h3></div>
+    <!--<div class="mdl-layout&#45;&#45;large-screen-only mdl-layout__header-row"></div>-->
   </header>
 
-  <div class="demo-ribbon"></div>
+  <main class="mdl-layout__content">
 
-  <main class="demo-main mdl-layout__content">
+    <div class="mdl-layout__tab-panel is-active" id="overview">
 
-    <div class="demo-container mdl-grid">
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__supporting-text">
+            <h4>Download latest RSS feed</h4>
+            <p>
+              This web page allows you to download your latest compiled and zipped RSS feed from the Opoint sources.
+            </p>
+            <p>
+              Right now, you can only download the archive corresponding to a single search profile
+              (<em>"PST html for feed"</em>, profile number <em>263596</em>)
+              that has been configured in your <a href="http://app.opoint.com/" target="_blank">Opoint Portal</a>.
+              This feed will contain the latest 100 articles matching your profile.
+            </p>
+            <p>
+              The zipped archive will contain your feed XML (file named <em>rss.xml</em>) and all the compiled HTML
+              files for intranet browsing.
+            </p>
+            <p>
+              Soon, you will start receiving PDF files with your feed too.
+            </p>
+            <p>
+              This feed delivery will only work if your intranet has a location named <em>http://opoint.intranett</em>.
+            </p>
+          </div>
+          <div class="mdl-card__actions">
+            <a href="http://api-emiliano.opoint.com/clients/pst/feeds/17558367-8233-41c3-8e94-c6466d314f5b/zip/"
+               class="mdl-button">
+              Click to download Zip Feed
+            </a>
+          </div>
+        </div>
+        <!--<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button&#45;&#45;icon" id="btn3">-->
+          <!--<i class="material-icons">more_vert</i>-->
+        <!--</button>-->
+        <!--<ul class="mdl-menu mdl-js-menu mdl-menu&#45;&#45;bottom-right" for="btn3">-->
+          <!--<li class="mdl-menu__item">Lorem</li>-->
+          <!--<li class="mdl-menu__item" disabled>Ipsum</li>-->
+          <!--<li class="mdl-menu__item">Dolor</li>-->
+        <!--</ul>-->
+      </section>
 
-      <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__supporting-text">
+            <h4>How to deploy the Zip Feed in your intranet</h4>
+            <ol>
+              <li>Download and save the Zip archive on your machine</li>
+              <li>
+                Extract the contents of the Zip archive into the root of your intranet feed server (this is
+                the folder where the address <em>http://opoint.intranett</em> points).<br />
+                Extracting the Zip archive will overwrite any already existing <em>rss.xml</em> file and it will
+                also update the contents of the folder named <em>files/</em>, if necessary
+              </li>
+              <li>Make sure that your web server has the necessary permissions to read the deployed files</li>
+              <li>
+                Point your browser to <a href="http://opoint.intranett/rss.xml" target="_blank">http://opoint.intranett/rss.xml</a>
+                to view the latest deployed RSS feed
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!--<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button&#45;&#45;icon" id="btn3">-->
+        <!--<i class="material-icons">more_vert</i>-->
+        <!--</button>-->
+        <!--<ul class="mdl-menu mdl-js-menu mdl-menu&#45;&#45;bottom-right" for="btn3">-->
+        <!--<li class="mdl-menu__item">Lorem</li>-->
+        <!--<li class="mdl-menu__item" disabled>Ipsum</li>-->
+        <!--<li class="mdl-menu__item">Dolor</li>-->
+        <!--</ul>-->
+      </section>
 
-      <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-
-        <h3>Download latest feed</h3>
-        <p><a href="http://api-emiliano.opoint.com/clients/pst/feeds/17558367-8233-41c3-8e94-c6466d314f5b/zip/">Click to download</a></p>
-
-        <h3>How to deploy the feeds in your intranet</h3>
-        <p>Blah blah</p>
-
-      </div>
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      </section>
 
     </div>
 
-    <footer class="demo-footer mdl-mini-footer">
-      <div class="mdl-mini-footer--left-section">
-        <ul class="mdl-mini-footer--link-list">
-          <!--<li><a href="#">Help</a></li>-->
-          <!--<li><a href="#">Privacy and Terms</a></li>-->
-          <!--<li><a href="#">User Agreement</a></li>-->
+    <footer class="mdl-mega-footer">
+      <div class="mdl-mega-footer--middle-section">
+        <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+          <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+          <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Features</h1>-->
+          <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+            <!--<li><a href="#">About</a></li>-->
+            <!--<li><a href="#">Terms</a></li>-->
+            <!--<li><a href="#">Partners</a></li>-->
+            <!--<li><a href="#">Updates</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+          <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+          <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Details</h1>-->
+          <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+            <!--<li><a href="#">Spec</a></li>-->
+            <!--<li><a href="#">Tools</a></li>-->
+            <!--<li><a href="#">Resources</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+          <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+          <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Technology</h1>-->
+          <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+            <!--<li><a href="#">How it works</a></li>-->
+            <!--<li><a href="#">Patterns</a></li>-->
+            <!--<li><a href="#">Usage</a></li>-->
+            <!--<li><a href="#">Products</a></li>-->
+            <!--<li><a href="#">Contracts</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+          <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+          <!--<h1 class="mdl-mega-footer&#45;&#45;heading">FAQ</h1>-->
+          <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+            <!--<li><a href="#">Questions</a></li>-->
+            <!--<li><a href="#">Answers</a></li>-->
+            <!--<li><a href="#">Contact us</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      </div>
+      <div class="mdl-mega-footer--bottom-section">
+        <div class="mdl-logo">
+          More Information
+        </div>
+        <ul class="mdl-mega-footer--link-list">
+          <li><a href="http://www.opoint.com/" target="_blank">Opoint</a></li>
+          <li><a href="http://app.opoint.com/" target="_blank">Opoint Portal (App)</a></li>
         </ul>
       </div>
     </footer>
@@ -51,3 +142,5 @@
   </main>
 
 </div>
+
+<button id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast" (click)="logout()">Logout</button>
